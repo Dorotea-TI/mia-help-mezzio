@@ -41,8 +41,8 @@ class SaveHandler extends \Mia\Auth\Request\MiaAuthRequestHandler
         // Obtener item a procesar
         $item = $this->getForEdit($request);
         // Guardamos data
-        $item->language_id = intval($this->getParam($request, 'language_id', ''));
-        $item->category_id = intval($this->getParam($request, 'category_id', ''));
+        $item->language_id = $this->getParam($request, 'language_id', null);
+        $item->category_id = $this->getParam($request, 'category_id', null);
         $item->title = $this->getParam($request, 'title', '');
         $item->content = $this->getParam($request, 'content', '');
         $item->likes = intval($this->getParam($request, 'likes', ''));
