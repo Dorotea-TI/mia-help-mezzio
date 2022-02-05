@@ -3,6 +3,7 @@
 namespace Mia\Help\Model;
 
 use Mia\Category\Model\MiaCategory;
+use Mia\Database\Model\MIALanguage;
 
 /**
  * Description of Model
@@ -103,10 +104,10 @@ class MiaHelp extends \Illuminate\Database\Eloquent\Model
     * 
     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
     */
-    /*public function language()
+    public function language()
     {
-        return $this->belongsTo(MiaLanguage::class, 'language_id');
-    }*/
+        return $this->belongsTo(MIALanguage::class, 'language_id');
+    }
 
 
     /**
