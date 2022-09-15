@@ -2,6 +2,8 @@
 
 namespace Mia\Help\Handler;
 
+use Mia\Core\Exception\MiaException;
+
 /**
  * Description of SaveHandler
  * 
@@ -52,7 +54,8 @@ class SaveHandler extends \Mia\Auth\Request\MiaAuthRequestHandler
         try {
             $item->save();
         } catch (\Exception $exc) {
-            return new \Mia\Core\Diactoros\MiaJsonErrorResponse(-2, $exc->getMessage());
+            throw new MiaException('No se ha podido guardar, verifique todos los campos', -2);
+            //return new \Mia\Core\Diactoros\MiaJsonErrorResponse(-2, $exc->getMessage());
         }
 
         // Devolvemos respuesta
